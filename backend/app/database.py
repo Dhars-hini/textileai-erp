@@ -3,16 +3,18 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from app.config import settings
 
-# pymysql driver — no extra binary needed, pure Python
+# SQLAlchemy 2.x dropped the legacy "postgres://" scheme.
+# Aiven (and Heroku) still issue URLs with "postgres://" — fix it here.
+db_url = settings.DATABASE_URL
+if db_url.startswith("postgres://"):
+    db_url = db_url.replace("postgres://", "postgresql://", 1)
+
 engine = create_engine(
-    settings.DATABASE_URL,
-    pool_pre_ping=True,       # auto-reconnect on dropped connections
-    pool_size=10,
-    max_overflow=20,
-    pool_recycle=3600,        # recycle connections every hour (important for MySQL)
-    connect_args={
-        "charset": "utf8mb4"  # full unicode support including emojis
-    },
+    db_url,
+    pool_pre_ping=True,   # auto-reconnect on dropped connections
+    pool_size=5,
+    max_overflow=10,
+    pool_recycle=1800,    # recycle connections every 30 min
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
