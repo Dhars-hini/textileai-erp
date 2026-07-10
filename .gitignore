@@ -1,0 +1,56 @@
+# ── Python / Backend ─────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment secrets — NEVER commit
+backend/.env
+.env
+/.env.*
+
+# Trained ML model binaries — large files, regenerated via train_model.py
+backend/app/models_trained/*.pkl
+
+# Alembic
+alembic/versions/
+
+# pytest
+.pytest_cache/
+htmlcov/
+.coverage
+
+# ── Node / Frontend ───────────────────────────────────────────────
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+frontend/.env.*.local
+
+# package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── IDE / OS ──────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Misc ──────────────────────────────────────────────────────────
+*.log
+*.tmp

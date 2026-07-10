@@ -1,0 +1,49 @@
+{
+  "trained_at": "2026-05-02T00:27:19.335279",
+  "total_logs_used": 7126,
+  "waste_samples": 7126,
+  "prod_samples": 1018,
+  "waste_features": [
+    "temp",
+    "humidity",
+    "spindle_speed",
+    "efficiency",
+    "stage_id",
+    "shift_id",
+    "input_kg"
+  ],
+  "prod_features": [
+    "spindle_speed",
+    "efficiency",
+    "waste_pct",
+    "temperature",
+    "humidity",
+    "hour"
+  ],
+  "waste_results": {
+    "LinearRegression": {
+      "r2": 0.0907,
+      "mae": 2.8911,
+      "cv_r2": 0.0905
+    },
+    "RandomForest": {
+      "r2": 0.9965,
+      "mae": 0.145,
+      "cv_r2": 0.9966
+    }
+  },
+  "prod_results": {
+    "LinearRegression": {
+      "r2": 0.9999,
+      "mae": 1.7306,
+      "cv_r2": 0.9999
+    },
+    "RandomForest": {
+      "r2": 0.9927,
+      "mae": 12.3538,
+      "cv_r2": 0.9906
+    }
+  },
+  "best_waste_model": "RandomForest",
+  "best_prod_model": "LinearRegression"
+}
