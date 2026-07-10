@@ -7,5 +7,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Railway injects $PORT at runtime — do NOT hardcode 8000 or 8080
-CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+# Use shell form (not exec form) so $PORT variable gets expanded by sh
+CMD uvicorn main:app --host 0.0.0.0 --port $PORT
