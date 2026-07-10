@@ -3,8 +3,7 @@ import {
   LayoutGrid, Factory, Droplets, Trash2, BrainCircuit, Zap,
   ChevronDown, Bell, Search, ChevronLeft, Settings, LogOut,
   X, User, Monitor, Save, CheckCircle,
-  Factory as FactoryIcon, AlertTriangle, TrendingUp,
-  BarChart2, ChevronRight, CheckCheck
+  Factory as FactoryIcon, ChevronRight, CheckCheck
 } from "lucide-react";
 
 const BASE = process.env.REACT_APP_API_BASE || "http://localhost:8000";
