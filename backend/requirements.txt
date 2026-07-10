@@ -8,7 +8,7 @@ python-multipart
 pydantic
 pydantic-settings
 python-jose[cryptography]
-bcrypt==4.0.1
+bcrypt
 alembic
 pandas
 numpy

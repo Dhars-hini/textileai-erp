@@ -11,10 +11,11 @@ if db_url.startswith("postgres://"):
 
 engine = create_engine(
     db_url,
-    pool_pre_ping=True,   # auto-reconnect on dropped connections
+    pool_pre_ping=True,
     pool_size=5,
     max_overflow=10,
-    pool_recycle=1800,    # recycle connections every 30 min
+    pool_recycle=1800,
+    connect_args={"sslmode": "require"},
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
