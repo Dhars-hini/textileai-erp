@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Calculator, ChevronDown, ChevronUp, Plus, Trash2, AlertTriangle, CheckCircle, Save } from "lucide-react";
+import { Calculator, ChevronDown, ChevronUp, Plus, Trash2, CheckCircle, Save } from "lucide-react";
 import { apiQuickCalc, apiSavePlan, apiYarnCounts } from "../api/api";
 
 const S = {

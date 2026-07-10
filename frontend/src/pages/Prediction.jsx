@@ -7,9 +7,9 @@ import {
 } from "../api/api";
 
 import {
-  BrainCircuit, AlertTriangle, RefreshCw, Target, Play,
-  Database, Zap, TrendingUp, TrendingDown, CheckCircle,
-  BarChart2, Clock, Settings
+  BrainCircuit, RefreshCw, Target, 
+  Database, Zap, TrendingUp,
+  BarChart2, Settings
 } from "lucide-react";
 
 const S = {
@@ -276,17 +276,16 @@ function PredictionPanel({ modelInfo, prodForm, setProdForm }) {
 function ForecastPanel() {
   const [params, setParams] = useState({ spindle_speed:20000, efficiency_pct:98, waste_pct:3.25, temperature_c:30, humidity_pct:60 });
   const [forecast, setForecast] = useState(null);
-  const [stages, setStages] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const run = async () => {
     setLoading(true);
     try {
-      const [f, s] = await Promise.all([
+      const [f] = await Promise.all([
         apiForecast7Day(params.spindle_speed, params.efficiency_pct, params.waste_pct),
         apiForecastStages(params.temperature_c, params.humidity_pct, params.spindle_speed, params.efficiency_pct),
       ]);
-      setForecast(f); setStages(s);
+      setForecast(f);
     } catch(e) { console.error(e); }
     finally { setLoading(false); }
   };

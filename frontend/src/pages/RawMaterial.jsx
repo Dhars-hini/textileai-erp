@@ -10,7 +10,6 @@ const S = {
   calcBtn:{ background:"linear-gradient(135deg,#0284c7,#0369a1)", color:"#fff", border:"none", borderRadius:13, padding:"12px 28px", fontSize:14, fontWeight:700, cursor:"pointer", boxShadow:"0 4px 14px rgba(2,132,199,0.35)", display:"flex", alignItems:"center", gap:8, fontFamily:"'DM Sans',sans-serif" },
 };
 
-const COUNTS = ["40s Cbd Hsy","40s Cbd Warp","30s Cbd Hsy","24s Cbd Hsy"];
 
 export default function RawMaterial() {
   const [form, setForm] = useState({ productionKg:17900, wastePercent:3.25, cardingWaste:4.5, blowroomWaste:1.2, combingWaste:14, baleWeight:165 });

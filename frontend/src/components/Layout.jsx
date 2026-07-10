@@ -2,9 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import {
   LayoutGrid, Factory, Droplets, Trash2, BrainCircuit, Zap,
   ChevronDown, Bell, Search, ChevronLeft, Settings, LogOut,
-  X, User, Shield, Bell as BellIcon, Monitor, Save, CheckCircle,
-  Factory as FactoryIcon, AlertTriangle, Package, TrendingUp,
-  BarChart2, Clock, ChevronRight, CheckCheck
+  X, User, Monitor, Save, CheckCircle,
+  Factory as FactoryIcon, AlertTriangle, TrendingUp,
+  BarChart2, ChevronRight, CheckCheck
 } from "lucide-react";
 
 const BASE = process.env.REACT_APP_API_BASE || "http://localhost:8000";
@@ -257,7 +257,7 @@ export default function Layout({ children, activePage, onNavigate, onLogout }) {
   const STABS = [
     { id:"mill",    label:"Mill Info",    icon:FactoryIcon },
     { id:"waste",   label:"Waste Limits", icon:Trash2 },
-    { id:"alerts",  label:"Alerts",       icon:BellIcon },
+    { id:"alerts",  label:"Alerts",       icon:Bell },
     { id:"display", label:"Display",      icon:Monitor },
     { id:"ai",      label:"AI & Model",   icon:BrainCircuit },
     { id:"account", label:"Account",      icon:User },
